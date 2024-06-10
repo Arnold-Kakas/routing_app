@@ -20,6 +20,23 @@
       ],
       "Hash": "065ae649b05f1ff66bb0c793107508f5"
     },
+    "DT": {
+      "Package": "DT",
+      "Version": "0.33",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "crosstalk",
+        "htmltools",
+        "htmlwidgets",
+        "httpuv",
+        "jquerylib",
+        "jsonlite",
+        "magrittr",
+        "promises"
+      ],
+      "Hash": "64ff3427f559ce3f2597a4fe13255cb6"
+    },
     "KernSmooth": {
       "Package": "KernSmooth",
       "Version": "2.23-24",
@@ -120,6 +137,25 @@
       ],
       "Hash": "45f0398006e83a5b10b72a90663d8d8c"
     },
+    "RSQLite": {
+      "Package": "RSQLite",
+      "Version": "2.3.7",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "DBI",
+        "R",
+        "bit64",
+        "blob",
+        "cpp11",
+        "memoise",
+        "methods",
+        "pkgconfig",
+        "plogr",
+        "rlang"
+      ],
+      "Hash": "46b45a4dd7bb0e0f4e3fc22245817240"
+    },
     "Rcpp": {
       "Package": "Rcpp",
       "Version": "1.0.12",
@@ -160,6 +196,42 @@
         "R"
       ],
       "Hash": "543776ae6848fde2f48ff3816d0628bc"
+    },
+    "bit": {
+      "Package": "bit",
+      "Version": "4.0.5",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R"
+      ],
+      "Hash": "d242abec29412ce988848d0294b208fd"
+    },
+    "bit64": {
+      "Package": "bit64",
+      "Version": "4.0.5",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "bit",
+        "methods",
+        "stats",
+        "utils"
+      ],
+      "Hash": "9fe98599ca456d6552421db0d6772d8f"
+    },
+    "blob": {
+      "Package": "blob",
+      "Version": "1.2.4",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "methods",
+        "rlang",
+        "vctrs"
+      ],
+      "Hash": "40415719b5a479b87949f3aa0aee737c"
     },
     "box": {
       "Package": "box",
@@ -326,6 +398,16 @@
         "yaml"
       ],
       "Hash": "8b7222e9d9eb5178eea545c0c4d33fc2"
+    },
+    "cpp11": {
+      "Package": "cpp11",
+      "Version": "0.4.7",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R"
+      ],
+      "Hash": "5a295d7d963cc5035284dcdbaf334f4e"
     },
     "crayon": {
       "Package": "crayon",
@@ -961,6 +1043,13 @@
       ],
       "Hash": "876c618df5ae610be84356d5d7a5d124"
     },
+    "plogr": {
+      "Package": "plogr",
+      "Version": "0.2.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "09eb987710984fc2905c7129c7d85e65"
+    },
     "png": {
       "Package": "png",
       "Version": "0.1-8",
@@ -1276,6 +1365,16 @@
       ],
       "Hash": "c19df082ba346b0ffa6f833e92de34d1"
     },
+    "semantic.assets": {
+      "Package": "semantic.assets",
+      "Version": "1.1.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "htmlwidgets"
+      ],
+      "Hash": "13ee579a535e39b73f2143eced792755"
+    },
     "sf": {
       "Package": "sf",
       "Version": "1.0-16",
@@ -1331,6 +1430,39 @@
         "xtable"
       ],
       "Hash": "54b26646816af9960a4c64d8ceec75d6"
+    },
+    "shiny.semantic": {
+      "Package": "shiny.semantic",
+      "Version": "0.5.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R6",
+        "glue",
+        "grDevices",
+        "htmltools",
+        "htmlwidgets",
+        "jsonlite",
+        "magrittr",
+        "purrr",
+        "semantic.assets",
+        "shiny",
+        "stats"
+      ],
+      "Hash": "7ba90374cf8d858e273e601b79473c16"
+    },
+    "shinyjs": {
+      "Package": "shinyjs",
+      "Version": "2.1.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "digest",
+        "jsonlite",
+        "shiny"
+      ],
+      "Hash": "802e4786b353a4bb27116957558548d5"
     },
     "sourcetools": {
       "Package": "sourcetools",

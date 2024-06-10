@@ -1,3 +1,23 @@
+box::use(
+  DBI[dbConnect, dbWriteTable, dbSendQuery, dbFetch, dbClearResult, dbListTables],
+  RSQLite[SQLite]
+)
+
 #' @export
-dframe <- data.frame(destination = "select or fill in",
-                    duration = 30)
+conn <- dbConnect(SQLite(), "app/logic/dframe.sqlite")
+
+
+if (!'dframe' %in% dbListTables(conn)) {
+  dframe <- data.frame(destination = "",
+                       duration = 30)
+  dbWriteTable(conn, "dframe", dframe, overwrite = TRUE)
+}
+
+
+#' @export
+getDFrame <- function() {
+  res <- dbSendQuery(conn, "SELECT * FROM dframe")
+  dframe <- dbFetch(res)
+  dbClearResult(res)
+  return(dframe)
+}
