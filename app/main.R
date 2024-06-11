@@ -3,9 +3,10 @@ box::use(
 )
 
 box::use(
-  app/logic/data[conn, getDFrame],
+  app/logic/data[dframe],
   app/view/mainpage,
 )
+
 
 # Specify the application port
 options(shiny.host = "0.0.0.0")
@@ -27,7 +28,7 @@ ui <- function(id) {
         class = "main-heading",
         style = "display: flex;
                 justify-content: space-between;",
-        tags$span("Router Optimizer"),
+        tags$span("Smerovač"),
         tags$a(
           style = "margin-right: 20px;",
           href = "https://www.cleandata.sk",
