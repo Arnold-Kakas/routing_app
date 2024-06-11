@@ -68,16 +68,20 @@ server <- function(id, data) {
           DF_to_geocode = DF |> 
             filter(is.na(latitude)) |>
             select(adresa)
-          
+
           DF_geo = geo(
             address = DF_to_geocode$adresa, method = "osm",
-            lat = latitude0, 
+            lat = latitude0,
             long = longitude0,
             quiet = TRUE
-          )
+          ) |> 
+            filter(!is.na(address)) |> 
+            mutate(address = as.character(address))
           
-          DF = DF |> 
-            left_join(DF_geo, by = join_by(adresa == address), keep = FALSE) |> 
+          print(DF_geo)
+
+          DF = DF |>
+            left_join(DF_geo, by = join_by(adresa == address), keep = FALSE) |>
             mutate(latitude = coalesce(latitude, latitude0),
                    longitude = coalesce(longitude, longitude0)
             )
@@ -98,9 +102,11 @@ server <- function(id, data) {
       DF = data_table()
       
       if (!is.null(DF))
-        rhandsontable(DF[1:7], width = 550,
-                      height = 300) |>
-        hot_col("trvanie", format = "0")|> 
+        rhandsontable(DF[1:7], 
+                      width = 550,
+                      height = 300,
+                      rowHeaders = NULL) |>
+        hot_col("trvanie", format = "0") |> 
         hot_cols(colWidths = ifelse(names(DF) %in% c("longitude", "latitude"), 
                                     0.1, 
                                     ifelse(names(DF) == "adresa", 
@@ -129,8 +135,10 @@ server <- function(id, data) {
       DF = data_table()
 
       if (!is.null(DF))
-        rhandsontable(DF[1:7], width = 550,
-                      height = 300) |>
+        rhandsontable(DF[1:7], 
+                      width = 550,
+                      height = 300,
+                      rowHeaders = NULL) |>
         hot_col("trvanie", format = "0") |> 
         hot_cols(colWidths = ifelse(names(DF) %in% c("longitude", "latitude"), 
                                     0.1, 
